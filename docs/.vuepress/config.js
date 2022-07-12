@@ -9,12 +9,32 @@ module.exports = {
     lineNumbers: true // 代码块显示行号
   },
   themeConfig: {
-    nav:[ // 导航栏配置
+    // 导航栏配置
+    nav:[
       {text: 'HOME', link: '/' },
       {text: 'ABOUT', link: '/about/'},
       {text: 'TAGS', link: '/tags/'}      
     ],
-    sidebar: 'auto', // 侧边栏配置
+    // 侧边栏配置
+    sidebar: [
+      {
+        title: 'tags',
+        path: '/tags',
+        collapsable: false, // 不折叠
+        children: [
+          {title: "前言", path: "/tags/index"},
+        ]
+      },
+      {
+        title: '关于我',
+        path: '/',
+        collapsable: false, // 不折叠
+        children: [
+          {title: "about", path: "/about/index/"},
+          {title: "js", path: "/about/js/"},
+        ]
+      }
+    ],
     sidebarDepth: 2, // 侧边栏显示2级
   }
 };
